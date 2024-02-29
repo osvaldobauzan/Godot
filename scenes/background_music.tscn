@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwb27mt3w6nax"]
+
+[ext_resource type="AudioStream" uid="uid://b0nj2pwvfasxk" path="res://assets/HerosCallingLOOP.wav" id="1_6l3fa"]
+
+[node name="Background_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_6l3fa")
+volume_db = -18.0
+autoplay = true

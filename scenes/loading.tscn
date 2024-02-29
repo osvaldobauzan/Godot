@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciwikehy8w3gk"]
+
+[ext_resource type="Script" path="res://scripts/loading.gd" id="1_4bk55"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 997.0
+offset_bottom = 461.0
+script = ExtResource("1_4bk55")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Control"]
+color = Color(0.576471, 0.768627, 1, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 184.0
+offset_top = 268.0
+offset_right = 817.0
+offset_bottom = 334.0
+
+[connection signal="value_changed" from="Control/ProgressBar" to="Control" method="_on_progress_bar_value_changed"]

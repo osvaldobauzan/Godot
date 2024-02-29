@@ -1,0 +1,164 @@
+[gd_scene load_steps=21 format=3 uid="uid://mqas5rmmyxqm"]
+
+[ext_resource type="Script" path="res://scripts/pantalla_inicio.gd" id="1_ohpgv"]
+[ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://Sprites/pantalla_inicio.png" id="1_rq356"]
+[ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_4fu3f"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="3_2tsr1"]
+[ext_resource type="Script" path="res://scripts/opciones_button.gd" id="5_ldh06"]
+[ext_resource type="Script" path="res://scripts/exit_game.gd" id="6_3tvcl"]
+
+[sub_resource type="Theme" id="Theme_01x5s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m081h"]
+font = ExtResource("2_4fu3f")
+font_size = 40
+font_color = Color(0.352941, 0, 0.560784, 1)
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_v6y3d"]
+default_font_size = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ro2na"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_152st"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sc5b"]
+
+[sub_resource type="GDScript" id="GDScript_7twcy"]
+script/source = "extends Button
+
+#@export var path = \"res://scenes/escena3DInicial.tscn\"
+
+# Si quiero una imagen que muestre una carga
+@export var path = \"res://scenes/loading.tscn\"
+
+# Redirige a name_player, va a ser necesario ahora?
+@export var path_name_player = \"res://scenes/name_player.tscn\"
+
+@export var path_auth = \"res://scenes/authentication.tscn\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	# Si el path no está vacío, llamamos a la ruta que he pasado
+	if path != \"\":
+		#get_tree().change_scene_to_file(path)
+		get_tree().change_scene_to_file(path_auth)
+
+
+func _on_play_pressed():
+	pass # Replace with function body.
+"
+
+[sub_resource type="Theme" id="Theme_ty8wy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3spjn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alei5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akl0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dsro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxpxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3nfb"]
+
+[node name="Pantalla_inicio" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ohpgv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(830.5, 447.25)
+scale = Vector2(1.61621, 1.09141)
+texture = ExtResource("1_rq356")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -515.0
+offset_top = -411.0
+offset_right = 515.0
+offset_bottom = 414.0
+color = Color(0.215686, 0.215686, 0.215686, 0)
+
+[node name="Control" type="Control" parent="Sprite2D/ColorRect"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.778
+offset_top = 204.883
+offset_right = 810.778
+offset_bottom = 633.883
+
+[node name="Label" type="Label" parent="Sprite2D/ColorRect/Control"]
+layout_mode = 0
+offset_left = 194.667
+offset_top = 121.208
+offset_right = 413.667
+offset_bottom = 170.208
+theme = SubResource("Theme_01x5s")
+text = "GODZLER"
+label_settings = SubResource("LabelSettings_m081h")
+
+[node name="Play" type="Button" parent="Sprite2D/ColorRect/Control"]
+layout_mode = 0
+offset_left = 222.222
+offset_top = 186.863
+offset_right = 379.222
+offset_bottom = 217.863
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_v6y3d")
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tsr1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ro2na")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_152st")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5sc5b")
+text = "INICIAR JUEGO"
+script = SubResource("GDScript_7twcy")
+
+[node name="Opciones" type="Button" parent="Sprite2D/ColorRect/Control"]
+layout_mode = 0
+offset_left = 241.778
+offset_top = 231.053
+offset_right = 360.778
+offset_bottom = 266.053
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_ty8wy")
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tsr1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3spjn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_alei5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_akl0w")
+text = "OPCIONES"
+script = ExtResource("5_ldh06")
+
+[node name="Salir del juego" type="Button" parent="Sprite2D/ColorRect/Control"]
+layout_mode = 0
+offset_left = 241.778
+offset_top = 286.607
+offset_right = 356.778
+offset_bottom = 317.607
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tsr1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0dsro")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bxpxi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3nfb")
+text = "SALIR"
+script = ExtResource("6_3tvcl")
+
+[connection signal="pressed" from="Sprite2D/ColorRect/Control/Play" to="Sprite2D/ColorRect/Control/Play" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/ColorRect/Control/Opciones" to="Sprite2D/ColorRect/Control/Opciones" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/ColorRect/Control/Salir del juego" to="Sprite2D/ColorRect/Control/Salir del juego" method="_on_pressed"]

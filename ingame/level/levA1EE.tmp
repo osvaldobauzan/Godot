@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkqdm6dt0ft2m"]
+
+[ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
+[ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
+[ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_kk8ym"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_alaus")
+
+[node name="Level1" parent="." instance=ExtResource("2_rlucc")]
+
+[node name="Duck" parent="." instance=ExtResource("3_kk8ym")]
+
+[connection signal="timeout" from="Duck/Timer_moves" to="Duck" method="_on_timer_moves_timeout"]
+
+[editable path="Duck"]

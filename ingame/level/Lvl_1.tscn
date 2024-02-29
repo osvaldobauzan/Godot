@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv18m1u7dgrj2"]
+
+[ext_resource type="Script" path="res://ingame/game/game_lvl_1.gd" id="1_lgmqq"]
+[ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_n3use"]
+[ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_t2fl6"]
+[ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="4_ntpfk"]
+[ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="5_7gd13"]
+[ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="6_ctnxe"]
+[ext_resource type="AudioStream" uid="uid://b0nj2pwvfasxk" path="res://assets/HerosCallingLOOP.wav" id="7_p6t66"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_lgmqq")
+
+[node name="Level1" parent="." instance=ExtResource("2_n3use")]
+metadata/_edit_lock_ = true
+
+[node name="Duck" parent="." instance=ExtResource("3_t2fl6")]
+position = Vector2(-73, -87)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="Duck" index="0"]
+frame_progress = 0.379119
+
+[node name="UI_movement" parent="." instance=ExtResource("4_ntpfk")]
+
+[node name="UI_Flechas_shdw" parent="UI_movement" index="3"]
+text = ""
+
+[node name="UI_Flechas" parent="UI_movement" index="4"]
+text = ""
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(0.790159, 0.790159)
+size_flags_horizontal = 0
+
+[node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_7gd13")
+
+[node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_ctnxe")
+
+[node name="bckgrnd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_p6t66")
+volume_db = -18.0
+autoplay = true
+
+[connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="UI_movement/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="Control/bckgrnd" to="." method="_on_bckgrnd_finished"]
+
+[editable path="Level1"]
+[editable path="Duck"]
+[editable path="UI_movement"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj4m4hdejv2na"]
+
+[ext_resource type="Script" path="res://ingame/game/game_lvl_1.gd" id="1_0dg11"]
+[ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="2_0re5o"]
+[ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="3_aogde"]
+[ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="4_q5yif"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_0dg11")
+
+[node name="UI_movement" parent="." instance=ExtResource("2_0re5o")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(0.790159, 0.790159)
+size_flags_horizontal = 0
+
+[node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_aogde")
+
+[node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("4_q5yif")
+
+[connection signal="pressed" from="UI_movement/Panel/Button" to="." method="_on_button_pressed"]
+
+[editable path="UI_movement"]

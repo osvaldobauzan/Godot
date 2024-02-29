@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://boni6lclcsy1f"]
+
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_iek7r"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_p7d1w"]
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_iek7r")
+
+[node name="Label" type="Label" parent="."]
+process_mode = 3
+visible = false
+offset_left = 708.0
+offset_top = 374.0
+offset_right = 1180.0
+offset_bottom = 478.0
+theme_override_fonts/font = ExtResource("2_p7d1w")
+theme_override_font_sizes/font_size = 70
+text = "PAUSE"

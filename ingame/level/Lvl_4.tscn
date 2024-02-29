@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbj6widmwpdvr"]
+
+[ext_resource type="PackedScene" uid="uid://w648iyqiuuio" path="res://ingame/level/level_fin.tscn" id="2_2y18f"]
+[ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_h2x8u"]
+[ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="5_tyu4w"]
+[ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="6_xtuco"]
+[ext_resource type="AudioStream" uid="uid://b0nj2pwvfasxk" path="res://assets/HerosCallingLOOP.wav" id="7_7edvn"]
+
+[node name="Game" type="Node2D"]
+
+[node name="LevelFinal" parent="." instance=ExtResource("2_2y18f")]
+
+[node name="Duck" parent="." instance=ExtResource("3_h2x8u")]
+position = Vector2(1280, 320)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="Duck" index="0"]
+frame_progress = 0.379119
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(0.790159, 0.790159)
+size_flags_horizontal = 0
+
+[node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_tyu4w")
+
+[node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_xtuco")
+
+[node name="bckgrnd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_7edvn")
+volume_db = -18.0
+autoplay = true
+
+[connection signal="finished" from="Control/bckgrnd" to="." method="_on_bckgrnd_finished"]
+
+[editable path="Duck"]

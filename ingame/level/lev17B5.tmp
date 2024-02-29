@@ -1,0 +1,244 @@
+[gd_scene load_steps=15 format=3 uid="uid://bkqdm6dt0ft2m"]
+
+[ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
+[ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
+[ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_kk8ym"]
+[ext_resource type="Texture2D" uid="uid://dcsktu7rnytyx" path="res://assets/UI/robin/Background@2x.png" id="4_i15fg"]
+[ext_resource type="Texture2D" uid="uid://h2myejbpy35k" path="res://assets/UI/movil/WideSlider_Orange_Frame.svg" id="5_ahe4k"]
+[ext_resource type="Texture2D" uid="uid://d3fkoihbjvqy5" path="res://assets/UI/robin/Default.png" id="5_fym6e"]
+[ext_resource type="Texture2D" uid="uid://xrcbx6cn7ue6" path="res://assets/UI/robin/Icon/ArrowRight-Thin.png" id="6_8u0mc"]
+[ext_resource type="FontFile" uid="uid://c3i8kg843bt7x" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="7_q4v18"]
+[ext_resource type="Texture2D" uid="uid://bsv14vdbfi0jt" path="res://assets/UI/movil/WideSlider_Orange_Background.svg" id="7_qwpqg"]
+[ext_resource type="Texture2D" uid="uid://csvaf60r0rbw1" path="res://assets/UI/movil/r_Icon_Small_Blank_Arrow.png" id="8_6by0d"]
+[ext_resource type="Texture2D" uid="uid://do1xrupcsekxj" path="res://assets/UI/movil/l_Icon_Small_Blank_Arrow.png" id="9_rqnoh"]
+[ext_resource type="Texture2D" uid="uid://ekb561boots5" path="res://assets/UI/movil/u_Icon_Small_Blank_Arrow.png" id="10_st5p6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w2kcb"]
+line_spacing = -19.0
+font = ExtResource("7_q4v18")
+font_size = 48
+font_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqlq0"]
+line_spacing = -19.0
+font = ExtResource("7_q4v18")
+font_size = 48
+font_color = Color(0.133333, 0.870588, 0.290196, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0.188235, 1)
+shadow_size = 3
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_alaus")
+
+[node name="Level1" parent="." instance=ExtResource("2_rlucc")]
+metadata/_edit_lock_ = true
+
+[node name="Duck" parent="." instance=ExtResource("3_kk8ym")]
+position = Vector2(-73, -87)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="Duck" index="0"]
+frame_progress = 0.379119
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = 63.0
+offset_right = 259.0
+offset_bottom = -20.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 109.0
+offset_right = 1583.0
+offset_bottom = 309.0
+rotation = 1.57079
+scale = Vector2(0.457086, 0.55471)
+texture = ExtResource("7_qwpqg")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 106.0
+offset_right = 1591.0
+offset_bottom = 306.0
+rotation = 1.57079
+scale = Vector2(0.460846, 0.639342)
+texture = ExtResource("5_ahe4k")
+expand_mode = 3
+
+[node name="UI_Flechas_shdw" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.964
+anchor_right = 0.5
+anchor_bottom = 0.964
+offset_left = -32.5
+offset_top = -659.0
+offset_right = 32.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "⬅
+⬆️
+⬇️
+⬅
+⬇️
+➡️
+⬇️
+⬇️
+⬇️"
+label_settings = SubResource("LabelSettings_w2kcb")
+horizontal_alignment = 1
+
+[node name="UI_Flechas" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.964
+anchor_right = 0.5
+anchor_bottom = 0.964
+offset_left = -32.5
+offset_top = -659.0
+offset_right = 32.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "⬅
+⬆️
+⬇️
+⬅
+⬇️
+➡️
+⬇️
+⬇️
+⬇️"
+label_settings = SubResource("LabelSettings_nqlq0")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 295.519
+offset_top = 122.475
+offset_right = 1726.52
+offset_bottom = 322.475
+rotation = 1.57079
+scale = Vector2(0.498841, 0.498841)
+texture = ExtResource("7_qwpqg")
+expand_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0417
+offset_top = -77.9487
+offset_right = 516.042
+offset_bottom = 90.0513
+grow_vertical = 2
+scale = Vector2(0.930602, 0.930602)
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/VBoxContainer"]
+modulate = Color(0.545098, 0.4, 0.309804, 1)
+layout_mode = 2
+texture = ExtResource("8_6by0d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect/VBoxContainer"]
+modulate = Color(0.545098, 0.4, 0.309804, 1)
+layout_mode = 2
+texture = ExtResource("9_rqnoh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect/VBoxContainer"]
+modulate = Color(0, 0.839216, 0.254902, 1)
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("10_st5p6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(0.790159, 0.790159)
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+offset_right = 992.0
+offset_bottom = 896.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(119.52, 503.524)
+rotation = 1.5708
+scale = Vector2(0.722468, 1.30545)
+texture = ExtResource("4_i15fg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 199)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="ArrowRight-thin" type="Sprite2D" parent="Control/VBoxContainer/Sprite2D2"]
+position = Vector2(8.58307e-06, -10.6479)
+rotation = -1.57079
+texture = ExtResource("6_8u0mc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 273)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 348)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 422)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 498)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 572)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 650.5)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 726.5)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Control/VBoxContainer"]
+position = Vector2(126, 800.5)
+scale = Vector2(0.845238, 0.845238)
+texture = ExtResource("5_fym6e")
+
+[connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
+
+[editable path="Level1"]
+[editable path="Duck"]

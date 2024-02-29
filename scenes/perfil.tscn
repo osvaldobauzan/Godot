@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://dudo7cgdiube5"]
+
+[ext_resource type="Script" path="res://scripts/perfil.gd" id="1_pydy3"]
+[ext_resource type="FontFile" uid="uid://dsxw7olfx76bi" path="res://fonts/connection_ii/ConnectionII.otf" id="2_2tlqc"]
+
+[node name="perfil" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pydy3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 5.0
+offset_right = 1542.0
+offset_bottom = 69.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -283.0
+offset_bottom = -15.0
+
+[node name="NamePlayer" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
+text = "Player: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 8.0
+offset_right = 495.0
+offset_bottom = 48.0
+
+[node name="LevelInfo" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
+text = "Level: "
+
+[node name="Level" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
+text = "          "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.687
+anchor_right = -1.687
+offset_left = 1538.19
+offset_top = 89.0
+offset_right = 1657.19
+offset_bottom = 124.0
+alignment = 1
+
+[node name="Logout" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1573.0
+offset_top = 18.0
+offset_right = 1635.0
+offset_bottom = 53.0
+text = "Exit"
+
+[connection signal="pressed" from="Logout" to="." method="_on_logout_pressed"]

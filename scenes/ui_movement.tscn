@@ -1,0 +1,159 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxkl7onb2vbsi"]
+
+[ext_resource type="Texture2D" uid="uid://bs3pcoorjvp0v" path="res://assets/UI/UI ICONS_WHITE_pixel art_Sprite Sheet.png" id="1_56igd"]
+[ext_resource type="Script" path="res://ingame/UI/ui_movement.gd" id="1_hg88k"]
+[ext_resource type="Texture2D" uid="uid://bsv14vdbfi0jt" path="res://assets/UI/movil/WideSlider_Orange_Background.svg" id="2_grq14"]
+[ext_resource type="Texture2D" uid="uid://h2myejbpy35k" path="res://assets/UI/movil/WideSlider_Orange_Frame.svg" id="3_rtg1y"]
+[ext_resource type="FontFile" uid="uid://c3i8kg843bt7x" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="4_hlnyt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w2kcb"]
+line_spacing = -19.0
+font = ExtResource("4_hlnyt")
+font_size = 48
+font_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqlq0"]
+line_spacing = -19.0
+font = ExtResource("4_hlnyt")
+font_size = 48
+font_color = Color(0.133333, 0.870588, 0.290196, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0.188235, 1)
+shadow_size = 3
+
+[node name="UI_movement" type="CanvasLayer"]
+script = ExtResource("1_hg88k")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 71.0
+offset_right = 230.0
+offset_bottom = -733.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel"]
+process_priority = 2
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.058
+anchor_bottom = 0.087
+offset_left = 99.0
+offset_top = 15.0
+offset_right = 115.054
+offset_bottom = 29.996
+
+[node name="UiIconsWhitePixelArtSpriteSheet" type="Sprite2D" parent="Panel"]
+modulate = Color(1, 0.419608, 0.215686, 1)
+position = Vector2(25.47, 67.9402)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_56igd")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet2" type="Sprite2D" parent="Panel"]
+modulate = Color(1, 0.419608, 0.215686, 1)
+position = Vector2(67.94, 67.9402)
+rotation = -1.57079
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_56igd")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet4" type="Sprite2D" parent="Panel"]
+modulate = Color(1, 0.419608, 0.215686, 1)
+position = Vector2(67.94, 25.4701)
+rotation = 1.57079
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_56igd")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet3" type="Sprite2D" parent="Panel"]
+modulate = Color(1, 0.419608, 0.215686, 1)
+position = Vector2(111.47, 67.9402)
+rotation = -3.14159
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_56igd")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet5" type="Sprite2D" parent="Panel"]
+modulate = Color(0.403922, 0.839216, 0.184314, 1)
+position = Vector2(111, 27)
+scale = Vector2(0.281511, 0.281511)
+texture = ExtResource("1_56igd")
+region_enabled = true
+region_rect = Rect2(654.009, 14.0494, 99.8907, 100.592)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 215.0
+offset_top = 172.0
+offset_right = 1646.0
+offset_bottom = 372.0
+rotation = 1.57079
+scale = Vector2(0.471539, 0.554711)
+texture = ExtResource("2_grq14")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 223.0
+offset_top = 169.0
+offset_right = 1654.0
+offset_bottom = 369.0
+rotation = 1.57079
+scale = Vector2(0.475351, 0.639342)
+texture = ExtResource("3_rtg1y")
+expand_mode = 3
+
+[node name="UI_Flechas_shdw" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.964
+anchor_right = 0.5
+anchor_bottom = 0.964
+offset_left = -703.5
+offset_top = -676.012
+offset_right = -638.5
+offset_bottom = -17.012
+grow_horizontal = 2
+grow_vertical = 0
+text = "⬅
+⬆️
+⬇️
+⬅
+⬇️
+➡️
+⬇️
+⬇️
+⬇️"
+label_settings = SubResource("LabelSettings_w2kcb")
+horizontal_alignment = 1
+
+[node name="UI_Flechas" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.964
+anchor_right = 0.5
+anchor_bottom = 0.964
+offset_left = -703.5
+offset_top = -676.012
+offset_right = -638.5
+offset_bottom = -17.012
+grow_horizontal = 2
+grow_vertical = 0
+text = "⬅
+⬆️
+⬇️
+⬅
+⬇️
+➡️
+⬇️
+⬇️
+⬇️"
+label_settings = SubResource("LabelSettings_nqlq0")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

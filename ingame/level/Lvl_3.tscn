@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://0crq8ffq2lq2"]
+
+[ext_resource type="Script" path="res://ingame/game/game_lvl_3.gd" id="1_httpj"]
+[ext_resource type="PackedScene" uid="uid://dyoqf5ehownkk" path="res://ingame/level/level_5.tscn" id="2_nr8mc"]
+[ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_k8nuc"]
+[ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="4_70v4e"]
+[ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="5_crnfr"]
+[ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="6_yv4am"]
+[ext_resource type="AudioStream" uid="uid://b0nj2pwvfasxk" path="res://assets/HerosCallingLOOP.wav" id="7_lc3js"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_httpj")
+
+[node name="Level5" parent="." instance=ExtResource("2_nr8mc")]
+
+[node name="Duck" parent="." instance=ExtResource("3_k8nuc")]
+position = Vector2(-73, -87)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="Duck" index="0"]
+frame_progress = 0.379119
+
+[node name="UI_movement" parent="." instance=ExtResource("4_70v4e")]
+
+[node name="UI_Flechas_shdw" parent="UI_movement" index="3"]
+text = ""
+
+[node name="UI_Flechas" parent="UI_movement" index="4"]
+text = ""
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(0.790159, 0.790159)
+size_flags_horizontal = 0
+
+[node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_crnfr")
+
+[node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_yv4am")
+
+[node name="bckgrnd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_lc3js")
+volume_db = -18.0
+autoplay = true
+
+[connection signal="pressed" from="UI_movement/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="Control/bckgrnd" to="." method="_on_bckgrnd_finished"]
+
+[editable path="Duck"]
+[editable path="UI_movement"]
