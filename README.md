@@ -1,44 +1,28 @@
-# Gozzler
+# Overview
 
-## Qué es Gozzler
-Puzzler Godot es un juego 2D de resolución de puzles con una mecánica basada en la programación de movimientos. 
+Puzzler Godot is a 2D puzzle-solving game with mechanics based on movement programming.
+In each level, the character starts at a starting point and must reach an end point (objective) through a predefined scenario, and with the particularity that our character, once he starts his movement, will not stop until he collides with an obstacle. To beat the level, the player must study the maze and anticipate what moves the character must make to get there. Sometimes there is more than one sequence of moves to solve the puzzle, but the challenge is to find the best path (usually the fastest).
 
-### Etiquetas
-#casual #indie #2d #puzzle #pixel
+To preprogram movements, the player has a virtual console of direction buttons. After pressing the chosen sequence and registering it in the interface, you just have to press _Play_ and the character will begin his journey, one step after another.
+It is possible that the player will not be able to solve the puzzle the first time (or that their character will die trying). It will have retries until it succeeds.
+As the player progresses, the difficulty will increase. Enemies will come into play that will get in your way and objects that can help or hinder the resolution.
+The game will have a home screen, options menu, level selection and saved progress. For this functionality, you will have access to a database in the cloud.
 
-## Cómo se juega
-En cada nivel, el personaje comienza en un punto de inicio y debe llegar a un punto final (objetivo) a través de un escenario predefinido, y con la particularidad de que nuestro personaje, una vez inicia su movimiento, no se detendrá hasta chocar con un obstáculo. Para superar el nivel, el jugador deberá estudiar el laberinto y anticipar qué movimientos debe realizar el personaje para llegar. En ocasiones existe más de una secuencia de movimientos para resolver el puzle, pero el reto consiste en encontrar el mejor camino (por lo general, el más rápido).
+[Software Demo Video](https://www.youtube.com/watch?v=yH7hR3IXhLA&ab_channel=OsvaldoBauzan)
 
-![muestra](_img\1707329230555_r.jpg)
+# Development Environment
 
-Para preprogramar los movimientos, el jugador cuenta con una consola virtual de botones de dirección. Tras pulsar la secuencia elegida y registrarla en la interfaz, solo hay que pulsar el _Play_ y el personaje iniciará su recorrido, un paso detrás de otro. 
-
-Es posible que el jugador no logre resolver el puzle a la primera (o que su personaje muera en el intento). Contará con reintentos hasta que lo logre.
-
-A medida que el jugador avance, la dificultad aumentará. Entrarán en juego enemigos que se interpondrán en su camino y objetos que pueden ayudar o dificultar la resolución. 
-
-## Otras funcionalidades
-El juego contará con pantalla de inicio, menú de opciones, selección de niveles y guardado de progreso. Para esta funcionalidad, contará con acceso a una base de datos en la nube.
-
-
-## Software empleado
-**Motor**
 - Godot==4.2
-
-**Lenguaje de programación**
 - GDScript==2.0
-
-**Control de versiones**
 - Git==2.43.0.windows.1
-
-**Base de datos**
 - Google Firestore
 
+# Useful Websites
 
+* [Godot Tutorials](https://godottutorials.com/)
+* [Godot Docs](https://godotengine.org/)
 
-## Recursos y créditos
-- Creadores: © 2024, Noa Velasco y Javier Maiz
-- Música: [Joel Francis Burford](https://joelfrancisburford.itch.io/)
-- Sprites:
-	- [DevHive](https://devhive.itch.io/)
-	- [Kenney](https://www.kenney.nl/)
+# Future Work
+
+* Create more levels
+* Let levels autogenerate themselves 
